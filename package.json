@@ -6,23 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kamsteegsoftware/react-native-alternate-icons.git"
-  },
+  "repository": "https://github.com/kamsteegsoftware/react-native-alternate-icons",
   "keywords": [
     "react-component",
     "react-native",
     "ios",
-    "Alternate",
-    "Icons",
-    "iOS",
-    "10.3+"
+    "alternate icons"
   ],
   "author": "Joey Kamsteeg <joey@kamsteegsoftware.nl>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kamsteegsoftware/react-native-alternate-icons/issues"
-  },
-  "homepage": "https://github.com/kamsteegsoftware/react-native-alternate-icons#readme"
+  "license": "MIT"
 }
