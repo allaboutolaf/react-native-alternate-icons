@@ -1,3 +1,6 @@
+## 0.4.2
+- More doc updates
+
 ## 0.4.1
 - Updated README; added CHANGELOG
 
