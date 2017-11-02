@@ -2,7 +2,7 @@
   "name": "react-native-alternate-icons",
   "version": "0.3.0",
   "description": "React Native Alternate Icons for iOS 10.3+",
-  "main": "ReactNativeAlternateIcons.ios.js",
+  "main": "index.js",
   "scripts": {
     "format-js": "prettier --write *.js",
     "test": "echo \"Error: no test specified\" && exit 1"
