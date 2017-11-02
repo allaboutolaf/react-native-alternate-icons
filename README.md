@@ -7,7 +7,7 @@ React Native Alternate Icons for iOS 10.3+
 ## Installation
 
 ```bash
-npm install react-native-alternate-icons@latest --save
+npm install @hawkrives/react-native-alternate-icons@latest --save
 ```
 
 ## Link the library to your React Native project
@@ -37,36 +37,46 @@ https://facebook.github.io/react-native/docs/linking-libraries-ios.html
   <dict>
     <key>CFBundleIconFiles</key>
     <array>
-      <string>icon</string>
+      <string>icon_filename</string>
     </array>
     <key>UIPrerenderedIcon</key>
-    <false/>
+    <true/>
   </dict>
   <key>CFBundleAlternateIcons</key>
   <dict>
-    <key>Red</key>
+    <key>icon_type_alternate_name</key>
     <dict>
       <key>CFBundleIconFiles</key>
       <array>
-        <string>Red</string>
+        <string>alternate_icon_filename</string>
       </array>
       <key>UIPrerenderedIcon</key>
-      <false/>
+      <true/>
     </dict>
   </dict>
 </dict>
 ```
 
 #### Using in your React Native applications
-```js
-import * as Icons from 'react-native-alternate-icons';
+- `setIconName(name: string): Promise<void>` – takes one of the icon "names" defined in your Info.plist (`icon_type_alternate_name`, in the example above)
+- `getIconName(): Promise<string>` – returns the current icon's name
+- `reset(): Promise<void>` – resets the icon to the default bundle icon
+- `isSupported(): Promise<boolean>` – checks if the current devide is supported. Always returns `false` on Android.
 
-// Change the icons of your application
+Because these all return promises, you can use them with ES2016's async/await syntax, too!
+
+For example, you can import all of the functions as a namespace:
+
+```js
+import * as Icons from '@hawkrives/react-native-alternate-icons';
+
 await Icons.setIconName(iconName);
-// get Current Icon Name
-await Icons.getIconName();
-// Reset the icon of your application to the default
-await Icons.reset();
-// Check if your device does support alternate icons, android returns always false
-await Icons.isSupported();
+```
+
+or import just one or two of them:
+
+```js
+import {getIconName} from '@hawkrives/react-native-alternate-icons';
+
+await getIconName();
 ```
