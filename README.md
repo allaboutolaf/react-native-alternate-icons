@@ -68,5 +68,5 @@ await Icons.getIconName();
 // Reset the icon of your application to the default
 await Icons.reset();
 // Check if your device does support alternate icons, android returns always false
-await Icons.supportDevice( callback( result ) );
+await Icons.isSupported();
 ```
