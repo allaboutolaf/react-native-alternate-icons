@@ -1,3 +1,6 @@
+## 0.4.4
+- Fixed module exporting
+
 ## 0.4.3
 - Fixed reworked API to use the RCT_* things correctly
 
