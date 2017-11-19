@@ -1,3 +1,6 @@
+## 0.4.3
+- Fixed reworked API to use the RCT_* things correctly
+
 ## 0.4.2
 - More doc updates
 
