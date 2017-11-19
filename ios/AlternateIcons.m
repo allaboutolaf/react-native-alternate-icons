@@ -14,57 +14,55 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_REMAP_MATHOD(setIconName: (NSString *)name,
-                 resolver: (RCTPromiseResolveBlock)resolve,
-                 rejecter: (RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(setIconName: (NSString *)name
+                  resolver: (RCTPromiseResolveBlock)resolve
+                  rejecter: (RCTPromiseRejectBlock)reject) {
     if (SYSTEM_VERSION_LESS_THAN(@"10.3")) {
-        reject(RCTMakeAndLogError(@"Alternate icons are not supported on iOS versions < 10.3"));
+        reject(@"error", @"Alternate icons are not supported on iOS versions < 10.3", nil);
     }
 
     if (![[UIApplication sharedApplication] supportsAlternateIcons]) {
-        reject(RCTMakeError(@"Alternate icons are not supported"));
+        reject(@"error", @"Alternate icons are not supported", nil);
     }
 
     [[UIApplication sharedApplication] setAlternateIconName:name
                                           completionHandler:^(NSError *_Nullable error) {
                                               if (error != nil) {
-                                                  reject(RCTJSErrorFromNSError(error));
+                                                  reject(@"error", @"Problem changing the icon", error);
                                               } else {
-                                                  resolve();
+                                                  resolve(@true);
                                               }
                                           }];
 }
 
-RCT_REMAP_METHOD(reset,
-                 resolver: (RCTPromiseResolveBlock)resolve,
-                 rejecter: (RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(reset: (RCTPromiseResolveBlock)resolve
+                  rejecter: (RCTPromiseRejectBlock)reject) {
     if (SYSTEM_VERSION_LESS_THAN(@"10.3")) {
-        reject(RCTMakeAndLogError(@"Alternate icons are not supported on iOS versions < 10.3"));
+        reject(@"error", @"Alternate icons are not supported on iOS versions < 10.3", nil);
     }
 
     if (![[UIApplication sharedApplication] supportsAlternateIcons]) {
-        reject(RCTMakeError(@"Alternate icons are not supported"));
+        reject(@"error", @"Alternate icons are not supported", nil);
     }
 
     [[UIApplication sharedApplication] setAlternateIconName:nil
                                           completionHandler:^(NSError *_Nullable error) {
                                               if (error != nil) {
-                                                  reject(RCTJSErrorFromNSError(error));
+                                                  reject(@"error", @"Problem changing the icon", error);
                                               } else {
-                                                  resolve();
+                                                  resolve(@true);
                                               }
                                           }];
 }
 
-RCT_REMAP_METHOD(getIconName,
-                 resolver: (RCTPromiseResolveBlock)resolve,
-                 rejecter: (RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(getIconName: (RCTPromiseResolveBlock)resolve
+                  rejecter: (RCTPromiseRejectBlock)reject) {
     if (SYSTEM_VERSION_LESS_THAN(@"10.3")) {
-        reject(RCTMakeAndLogError(@"Alternate icons are not supported on iOS versions < 10.3"));
+        reject(@"error", @"Alternate icons are not supported on iOS versions < 10.3", nil);
     }
 
     if (![[UIApplication sharedApplication] supportsAlternateIcons]) {
-        reject(RCTMakeError(@"Alternate icons are not supported"));
+        reject(@"error", @"Alternate icons are not supported", nil);
     }
 
     NSString *name = [[UIApplication sharedApplication] alternateIconName];
@@ -74,9 +72,8 @@ RCT_REMAP_METHOD(getIconName,
     resolve(name);
 }
 
-RCT_REMAP_METHOD(isSupported,
-                 resolver: (RCTPromiseResolveBlock)resolve,
-                 rejecter: (RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(isSupported: (RCTPromiseResolveBlock)resolve
+                  rejecter: (RCTPromiseRejectBlock)reject) {
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.3")) {
         if ([[UIApplication sharedApplication] supportsAlternateIcons]) {
             resolve(@YES);
