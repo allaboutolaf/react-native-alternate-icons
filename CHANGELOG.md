@@ -1,3 +1,6 @@
+## 0.4.5
+- Ensure that we run on the main thread, because iOS requires it
+
 ## 0.4.4
 - Fixed module exporting
 
