@@ -42,11 +42,11 @@ RCT_EXPORT_METHOD(setIconName: (NSString *)name
 RCT_EXPORT_METHOD(reset: (RCTPromiseResolveBlock)resolve
                   rejecter: (RCTPromiseRejectBlock)reject) {
     if (SYSTEM_VERSION_LESS_THAN(@"10.3")) {
-        reject(@"error", @"Alternate icons are not supported on iOS versions < 10.3", nil);
+        return resolve(@false);
     }
 
     if (![[UIApplication sharedApplication] supportsAlternateIcons]) {
-        reject(@"error", @"Alternate icons are not supported", nil);
+        return resolve(@false);
     }
 
     [[UIApplication sharedApplication] setAlternateIconName:nil
