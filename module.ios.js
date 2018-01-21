@@ -7,7 +7,7 @@ export function setIconName(name: string): Promise<void> {
     return AlternateIcons.setIconName(name);
 }
 
-export function reset(): Promise<void> {
+export function reset(): Promise<boolean> {
     return AlternateIcons.reset();
 }
 
