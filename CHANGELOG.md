@@ -1,3 +1,6 @@
+## 0.4.7
+- Remove rejections on getIconName and reset() on Android
+
 ## 0.4.6
 - Remove many of the `rejects` that would happen when functions were called on old iOS versions
 - Return "default" from getIconName when alternate icons are unavailable
