@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": "https://github.com/allaboutolaf/react-native-alternate-icons",
+  "homepage": "https://github.com/allaboutolaf/react-native-alternate-icons",
   "keywords": [
     "react-component",
     "react-native",
