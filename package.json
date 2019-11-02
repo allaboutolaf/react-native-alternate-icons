@@ -4,8 +4,7 @@
   "description": "React Native Alternate Icons for iOS 10.3+",
   "main": "index.js",
   "scripts": {
-    "format-js": "prettier --write *.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format-js": "prettier --write *.js"
   },
   "repository": "https://github.com/allaboutolaf/react-native-alternate-icons",
   "keywords": [
