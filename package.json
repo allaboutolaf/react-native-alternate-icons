@@ -7,7 +7,7 @@
     "format-js": "prettier --write *.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/kamsteegsoftware/react-native-alternate-icons",
+  "repository": "https://github.com/allaboutolaf/react-native-alternate-icons",
   "keywords": [
     "react-component",
     "react-native",
